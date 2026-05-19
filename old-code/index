@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AYCARS Club — Dubai & Miami's Premier Supercar Networking Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --accent: #89cff0; --white: #f0ede8; --off-white: #b0a99a; --dark: #0a0907; --dark-2: #111009; --dark-3: #1a1814; --dark-4: #242018; --border: rgba(137,207,240,0.2); --border-dim: rgba(255,255,255,0.07); }
+  html { scroll-behavior: smooth; }
+  body { background: var(--dark); color: var(--white); font-family: 'Barlow', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; height: 70px; background: rgba(10,9,7,0.92); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--border-dim); transition: background 0.3s; }
+  .nav-logo { font-family: 'Bebas Neue', cursive; font-size: 1.8rem; letter-spacing: 0.12em; color: var(--accent); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--off-white); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dark); background: var(--accent); padding: 0.5rem 1.4rem; text-decoration: none; transition: opacity 0.2s; font-weight: 600; }
+  .nav-cta:hover { opacity: 0.85; }
+  .btn-primary { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--accent); color: var(--dark); padding: 0.9rem 2.2rem; text-decoration: none; display: inline-block; transition: opacity 0.2s; font-weight: 600; }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-ghost { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; border: 0.5px solid rgba(137,207,240,0.5); color: var(--accent); padding: 0.9rem 2.2rem; text-decoration: none; display: inline-block; transition: background 0.2s; }
+  .btn-ghost:hover { background: rgba(137,207,240,0.1); }
+  .section-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+  .section-tag::before { content: ''; width: 30px; height: 0.5px; background: var(--accent); display: block; }
+  .section-title { font-family: 'Bebas Neue', cursive; font-size: clamp(2.8rem, 5vw, 4.5rem); letter-spacing: 0.04em; line-height: 1; margin-bottom: 1.5rem; }
+  .accent-divider { width: 40px; height: 0.5px; background: var(--accent); margin: 1.5rem 0; }
+
+  /* HERO */
+  .hero { height: 100vh; min-height: 700px; position: relative; display: flex; align-items: flex-end; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,9,7,0.25) 0%, rgba(10,9,7,0.05) 35%, rgba(10,9,7,0.88) 100%), url('https://images.squarespace-cdn.com/content/v1/66c2f5aa67e20d6721774f6f/1724052906795-09QAA39AOBP6Y1D8N0EY/Screenshot+2024-06-12+at+3.26.36+pm.png') center center / cover no-repeat; }
+  .hero-locations { position: absolute; top: 90px; right: 3rem; z-index: 2; display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+  .hero-loc-pill { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); background: rgba(10,9,7,0.65); border: 0.5px solid var(--border); padding: 0.3rem 0.9rem; backdrop-filter: blur(8px); }
+  .hero-content { position: relative; z-index: 2; padding: 0 4rem 6rem; max-width: 850px; }
+  .hero-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .hero-eyebrow::before { content: ''; display: block; width: 40px; height: 0.5px; background: var(--accent); }
+  .hero-title { font-family: 'Bebas Neue', cursive; font-size: clamp(4rem, 10vw, 8.5rem); line-height: 0.9; letter-spacing: 0.03em; color: var(--white); margin-bottom: 1.8rem; }
+  .hero-title span { color: var(--accent); }
+  .hero-sub { font-size: 1.05rem; font-weight: 300; color: var(--off-white); line-height: 1.7; max-width: 520px; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .hero-scroll { position: absolute; bottom: 2.5rem; right: 4rem; z-index: 2; font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--off-white); writing-mode: vertical-rl; }
+
+  /* PHILOSOPHY */
+  .philosophy { background: var(--accent); padding: 1.4rem 4rem; text-align: center; }
+  .philosophy p { font-family: 'Bebas Neue', cursive; font-size: clamp(1rem, 2vw, 1.6rem); letter-spacing: 0.1em; color: var(--dark); }
+
+  /* STATS */
+  .stats-bar { background: var(--dark-3); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border-dim); padding: 2.2rem 4rem; display: grid; grid-template-columns: repeat(5,1fr); }
+  .stat-item { text-align: center; padding: 0.5rem 1rem; border-right: 0.5px solid var(--border-dim); }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: 'Bebas Neue', cursive; font-size: 2.1rem; color: var(--accent); letter-spacing: 0.05em; line-height: 1; }
+  .stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--off-white); margin-top: 0.3rem; }
+  .stat-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.53rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); opacity: 0.6; margin-top: 0.1rem; }
+
+  /* ABOUT */
+  #about { background: var(--dark-2); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; padding: 7rem 4rem; }
+  .about-image { position: relative; aspect-ratio: 3/4; overflow: hidden; }
+  .about-image img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%); }
+  .about-image::before { content: ''; position: absolute; inset: 0; border: 0.5px solid var(--border); z-index: 1; pointer-events: none; }
+  .about-image::after { content: ''; position: absolute; top: 1.5rem; left: -1.5rem; width: 0.5px; height: 60%; background: var(--accent); }
+  .about-body p { color: var(--off-white); font-size: 1.05rem; line-height: 1.85; margin-bottom: 1.4rem; }
+  .about-body strong { color: var(--white); font-weight: 600; }
+  .loc-tags { display: flex; gap: 0.8rem; margin: 1.5rem 0; flex-wrap: wrap; }
+  .loc-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; border: 0.5px solid var(--border); color: var(--accent); padding: 0.35rem 0.9rem; }
+
+  /* EVENT FORMAT */
+  #event-format { padding: 7rem 4rem; background: var(--dark); }
+  .event-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--border-dim); margin-top: 3rem; }
+  .event-step { background: var(--dark-3); padding: 3rem 2.5rem; transition: background 0.3s; }
+  .event-step:hover { background: var(--dark-4); }
+  .step-num-bg { font-family: 'Bebas Neue', cursive; font-size: 5rem; color: var(--accent); opacity: 0.08; line-height: 1; margin-bottom: 0.3rem; }
+  .step-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .step-name { font-family: 'Bebas Neue', cursive; font-size: 2.2rem; color: var(--white); letter-spacing: 0.04em; margin-bottom: 1rem; line-height: 1; }
+  .step-desc { font-size: 0.92rem; color: var(--off-white); line-height: 1.72; }
+  .step-detail { font-size: 0.78rem; color: var(--accent); font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.12em; margin-top: 1.2rem; opacity: 0.8; }
+
+  /* EVENT TYPES */
+  #event-types { padding: 6rem 4rem; background: var(--dark-2); }
+  .events-intro { max-width: 680px; margin-bottom: 3rem; }
+  .events-intro p { color: var(--off-white); font-size: 1.05rem; line-height: 1.8; margin-top: 1rem; }
+  .event-types-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border-dim); }
+  .event-type-item { background: var(--dark-3); padding: 2rem 1.5rem; text-align: center; transition: background 0.3s; }
+  .event-type-item:hover { background: var(--dark-4); }
+  .eti-icon { font-family: 'Bebas Neue', cursive; font-size: 2.5rem; color: var(--accent); opacity: 0.5; line-height: 1; margin-bottom: 0.8rem; }
+  .eti-name { font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); }
+
+  /* PAGE CARDS */
+  #features { background: var(--dark); padding: 7rem 4rem; }
+  .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border-dim); margin-top: 3rem; }
+  .feature-card { background: var(--dark-3); padding: 2.5rem 2rem; transition: background 0.3s; }
+  .feature-card:hover { background: var(--dark-4); }
+  .fc-num { font-family: 'Bebas Neue', cursive; font-size: 3rem; color: var(--accent); line-height: 1; margin-bottom: 1rem; opacity: 0.55; }
+  .fc-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); margin-bottom: 0.8rem; }
+  .fc-desc { font-size: 0.9rem; color: var(--off-white); line-height: 1.65; }
+  .fc-link { display: inline-block; margin-top: 1.2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 0.5px solid rgba(137,207,240,0.35); padding-bottom: 2px; transition: border-color 0.2s; }
+  .fc-link:hover { border-color: var(--accent); }
+
+  /* GALLERY */
+  #gallery { background: var(--dark); padding: 7rem 4rem 0; }
+  .gallery-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(12,1fr); grid-template-rows: 320px 280px; gap: 2px; }
+  .gallery-item { overflow: hidden; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(10%) contrast(1.05); transition: transform 0.5s ease, filter 0.4s; }
+  .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0%) contrast(1.05); }
+  .gi-1{grid-column:1/6;} .gi-2{grid-column:6/10;} .gi-3{grid-column:10/13;}
+  .gi-4{grid-column:1/4;} .gi-5{grid-column:4/8;} .gi-6{grid-column:8/13;}
+
+  /* CONTACT */
+  #contact { background: var(--dark-3); text-align: center; position: relative; overflow: hidden; padding: 8rem 4rem; }
+  #contact::before { content: 'AYCARS'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-family: 'Bebas Neue', cursive; font-size: 16rem; color: rgba(137,207,240,0.03); pointer-events: none; white-space: nowrap; }
+  .contact-inner { position: relative; z-index: 2; max-width: 620px; margin: 0 auto; }
+  .contact-inner .section-tag { justify-content: center; }
+  .contact-inner .section-title { font-size: clamp(3rem, 6vw, 6rem); }
+  .contact-inner p { color: var(--off-white); font-size: 1.05rem; line-height: 1.75; margin-bottom: 2.5rem; }
+  .contact-inner .accent-divider { margin: 1.5rem auto; }
+  .contact-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .contact-details { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+  .cd-item { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--off-white); }
+  .cd-item a { color: var(--accent); text-decoration: none; }
+
+  footer { background: var(--dark); border-top: 0.5px solid var(--border-dim); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Bebas Neue', cursive; font-size: 1.4rem; letter-spacing: 0.12em; color: var(--accent); text-decoration: none; }
+  .footer-copy { font-size: 0.78rem; color: var(--off-white); }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--off-white); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; } .nav-links { display: none; }
+    .hero-content { padding: 0 1.5rem 5rem; } .hero-scroll, .hero-locations { display: none; }
+    .stats-bar { grid-template-columns: 1fr 1fr; padding: 1.8rem 1.5rem; }
+    .stat-item:nth-child(2), .stat-item:nth-child(4) { border-right: none; }
+    .stat-item:nth-child(5) { grid-column: 1 / -1; border-right: none; }
+    .philosophy { padding: 1.2rem 1.5rem; }
+    #about { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
+    #event-format, #event-types, #features, #gallery, #contact { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .event-steps, .features-grid { grid-template-columns: 1fr; }
+    .event-types-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: unset; }
+    .gi-1,.gi-2,.gi-3,.gi-4,.gi-5,.gi-6 { grid-column: auto; aspect-ratio: 4/3; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    #contact::before { font-size: 5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a class="nav-logo" href="index.html">AYCARS</a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="sponsorship.html">Sponsorship</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+  </ul>
+  <a class="nav-cta" href="membership.html">Join Us</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-locations">
+    <div class="hero-loc-pill">Dubai, UAE</div>
+    <div class="hero-loc-pill">Miami, USA</div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Supercar &amp; Networking Club</div>
+    <h1 class="hero-title">Cars Are<br>A Gateway<br>To <span>Relationships</span></h1>
+    <p class="hero-sub">AYCARS connects supercar owners, entrepreneurs, and high-net-worth individuals through curated events, exclusive drives, and a media brand with 400M+ views — in Dubai and Miami.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="membership.html">Become a Member</a>
+      <a class="btn-ghost" href="sponsorship.html">Sponsor AYCARS</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll Down</div>
+</section>
+
+<div class="philosophy">
+  <p>Advertising is temporary &nbsp;&nbsp;·&nbsp;&nbsp; Branding Lasts &nbsp;&nbsp;·&nbsp;&nbsp; Cars Are a Gateway to Relationships</p>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">273M</div><div class="stat-label">Instagram Views</div><div class="stat-sub">+ 24M Likes</div></div>
+  <div class="stat-item"><div class="stat-num">127M</div><div class="stat-label">TikTok Views</div><div class="stat-sub">+ 23M Likes</div></div>
+  <div class="stat-item"><div class="stat-num">318K+</div><div class="stat-label">Total Followers</div><div class="stat-sub">All Platforms</div></div>
+  <div class="stat-item"><div class="stat-num">40+</div><div class="stat-label">Supercars Per Event</div><div class="stat-sub">Dubai &amp; Miami</div></div>
+  <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Cities</div><div class="stat-sub">Dubai · Miami</div></div>
+</div>
+
+<section id="about">
+  <div class="about-image">
+    <img src="https://images.squarespace-cdn.com/content/v1/66c2f5aa67e20d6721774f6f/1724052917277-7N8C8CZFVARA8BUAKQ9V/IMG_5070+2.JPG" alt="AYCARS community" loading="lazy">
+  </div>
+  <div class="about-body">
+    <div class="section-tag">Who We Are</div>
+    <h2 class="section-title">Supercar Club.<br>Networking Org.<br>Media Brand.</h2>
+    <div class="accent-divider"></div>
+    <p>AYCARS is where <strong>supercar owners, entrepreneurs, and high-net-worth individuals</strong> come together. We host events in Dubai and Miami where 40+ exotic cars gather, powerful engines meet powerful minds, and real business gets done.</p>
+    <p>We operate at the intersection of three things: an exclusive supercar club, a high-value networking organisation, and a media brand with hundreds of millions of views. <strong>Cars are our gateway — relationships are our product.</strong></p>
+    <div class="loc-tags">
+      <div class="loc-tag">Dubai, UAE — Primary Hub</div>
+      <div class="loc-tag">Miami, USA — Expansion</div>
+    </div>
+    <a class="btn-primary" href="about.html" style="margin-top:1.5rem; display:inline-block;">Meet the Founders</a>
+  </div>
+</section>
+
+<section id="event-format">
+  <div class="section-tag">Every AYCARS Event</div>
+  <h2 class="section-title">One Format.<br>Three Acts.<br>Every Time.</h2>
+  <div class="event-steps">
+    <div class="event-step">
+      <div class="step-num-bg">01</div>
+      <div class="step-tag">Act One</div>
+      <div class="step-name">The Meetup</div>
+      <p class="step-desc">Members gather at the <strong style="color:var(--white)">sponsor's location</strong> — showroom, boutique, restaurant, or office. They spend <strong style="color:var(--white)">1–3 hours</strong> directly engaging with the sponsor and their team. This is not a logo placement. This is your target market standing in your space.</p>
+      <div class="step-detail">1–3 hours · Direct interaction · CEOs, Entrepreneurs &amp; HNW individuals</div>
+    </div>
+    <div class="event-step">
+      <div class="step-num-bg">02</div>
+      <div class="step-tag">Act Two</div>
+      <div class="step-name">The Drive</div>
+      <p class="step-desc"><strong style="color:var(--white)">40+ supercars</strong> take to the roads in convoy — Lamborghinis, Ferraris, McLarens, Porsches, and Bugattis moving together. Every drive produces naturally viral content captured by members and influencers, reaching millions across platforms.</p>
+      <div class="step-detail">273M Instagram Views · 127M TikTok Views · Organic viral reach</div>
+    </div>
+    <div class="event-step">
+      <div class="step-num-bg">03</div>
+      <div class="step-tag">Act Three</div>
+      <div class="step-name">The Final Activity</div>
+      <p class="step-desc">Events close with a premium shared experience — <strong style="color:var(--white)">luxury dinners, networking events, sports activities, or business workshops.</strong> Memories formed here permanently associate the sponsor's brand with that feeling.</p>
+      <div class="step-detail">Luxury dinners · Sports · Networking · Business workshops</div>
+    </div>
+  </div>
+</section>
+
+<section id="event-types">
+  <div class="events-intro">
+    <div class="section-tag">What We Run</div>
+    <h2 class="section-title">Seven Types<br>of Event</h2>
+    <p>AYCARS runs a full calendar of experiences for members — from cruises on Dubai's highways to mentoring sessions with industry leaders and workshops that accelerate businesses.</p>
+  </div>
+  <div class="event-types-grid">
+    <div class="event-type-item"><div class="eti-icon">SC</div><div class="eti-name">Supercar Cruises</div></div>
+    <div class="event-type-item"><div class="eti-icon">CM</div><div class="eti-name">Car Meets</div></div>
+    <div class="event-type-item"><div class="eti-icon">ND</div><div class="eti-name">Networking Dinners</div></div>
+    <div class="event-type-item"><div class="eti-icon">TD</div><div class="eti-name">Track Days</div></div>
+    <div class="event-type-item"><div class="eti-icon">ME</div><div class="eti-name">Mentoring Events</div></div>
+    <div class="event-type-item"><div class="eti-icon">SA</div><div class="eti-name">Sports Activities</div></div>
+    <div class="event-type-item"><div class="eti-icon">BW</div><div class="eti-name">Business Workshops</div></div>
+    <div class="event-type-item"><div class="eti-icon">SP</div><div class="eti-name">Sponsor Activations</div></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="section-tag">Explore AYCARS</div>
+  <h2 class="section-title">Three Ways In</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="fc-num">01</div>
+      <div class="fc-name">About the Club</div>
+      <p class="fc-desc">Meet the founders — two internationally-experienced entrepreneurs who have lived across 8+ countries and are now reshaping the supercar club industry across Dubai and Miami.</p>
+      <a class="fc-link" href="about.html">Our Story →</a>
+    </div>
+    <div class="feature-card">
+      <div class="fc-num">02</div>
+      <div class="fc-name">Membership</div>
+      <p class="fc-desc">Access 7 event types, an exclusive community of HNW individuals, investment opportunities, member discounts, and a free professional photoshoot — anywhere in Dubai or Miami.</p>
+      <a class="fc-link" href="membership.html">Join as Member →</a>
+    </div>
+    <div class="feature-card">
+      <div class="fc-num">03</div>
+      <div class="fc-name">Sponsorship</div>
+      <p class="fc-desc">40+ HNW members at your venue for 1–3 hours. Be the ONLY brand recommended in your industry for the contract period. 400M+ views of reach. Featured across Instagram, TikTok, and WhatsApp.</p>
+      <a class="fc-link" href="sponsorship.html">Become a Sponsor →</a>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="gallery-header">
+    <div>
+      <div class="section-tag">Previous Events</div>
+      <h2 class="section-title">The Scene</h2>
+    </div>
+    <a class="btn-ghost" href="membership.html">Join the Club</a>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item gi-1"><img src="https://images.squarespace-cdn.com/content/v1/66c2f5aa67e20d6721774f6f/1724052910927-DRA4TXBLXD9QK7Y2AJ8U/IMG_4195.JPG" alt="AYCARS event" loading="lazy"></div>
+    <div class="gallery-item gi-2"><img src="https://images.squarespace-cdn.com/content/v1/66c2f5aa67e20d6721774f6f/1724052910919-MX4AQ7XO3ZOGY3JP3DWP/IMG_4154.JPG" alt="AYCARS drive" loading="lazy"></div>
+    <div class="gallery-item gi-3"><img src="https://images.squarespace-cdn.com/content/v1/66c2f5aa67e20d6721774f6f/1724052910944-9G1D69VJ8VY9HPFC80GX/IMG_4637.JPG" alt="AYCARS members" loading="lazy"></div>
+    <div class="gallery-item gi-4"><img src="https://images.squarespace-cdn.com/content/v1/66c2f5aa67e20d6721774f6f/1724052910940-XR3VVDNI0I1W6V5NZYCJ/IMG_4166.JPG" alt="AYCARS event" loading="lazy"></div>
+    <div class="gallery-item gi-5"><img src="https://images.squarespace-cdn.com/content/v1/66c2f5aa67e20d6721774f6f/1724052910954-6LICSFFTOJDSXXPKU6AN/IMG_4644.JPG" alt="AYCARS drive" loading="lazy"></div>
+    <div class="gallery-item gi-6"><img src="https://images.squarespace-cdn.com/content/v1/66c2f5aa67e20d6721774f6f/79d74b0a-f9ff-4272-80a5-d1e95ab3b32a/IMG_4183.jpg" alt="AYCARS members" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-tag">Get In Touch</div>
+    <h2 class="section-title">Let's Talk</h2>
+    <div class="accent-divider"></div>
+    <p>Supercar owner looking to join the community? Brand wanting direct access to Dubai and Miami's most successful people? Reach out — we respond personally.</p>
+    <div class="contact-btns">
+      <a class="btn-primary" href="membership.html">Join as a Member</a>
+      <a class="btn-ghost" href="sponsorship.html">Sponsor AYCARS</a>
+    </div>
+    <div class="contact-details">
+      <div class="cd-item">Email: <a href="mailto:aymen@aycars.ae">aymen@aycars.ae</a></div>
+      <div class="cd-item">Phone: <a href="tel:+971522618992">+971 52 261 8992</a></div>
+      <div class="cd-item">Social: <a href="https://instagram.com/aycars.ae" target="_blank">@aycars.ae</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="footer-logo" href="index.html">AYCARS</a>
+  <span class="footer-copy">© 2024 AYCARS Club · Dubai, UAE &amp; Miami, USA</span>
+  <ul class="footer-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="sponsorship.html">Sponsorship</a></li>
+  </ul>
+</footer>
+
+<script>
+  const items = document.querySelectorAll('.stat-item,.gallery-item,.feature-card,.event-step,.event-type-item');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>{ e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }, i*80); obs.unobserve(e.target); } });
+  }, {threshold:0.08});
+  items.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(22px)'; el.style.transition='opacity 0.6s ease, transform 0.6s ease'; obs.observe(el); });
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.style.background = window.scrollY>80 ? 'rgba(10,9,7,0.97)' : 'rgba(10,9,7,0.92)'; });
+</script>
+</body>
+</html>

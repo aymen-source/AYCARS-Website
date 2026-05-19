@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About AYCARS — Dubai & Miami's Supercar Networking Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --accent: #89cff0; --white: #f0ede8; --off-white: #b0a99a; --dark: #0a0907; --dark-2: #111009; --dark-3: #1a1814; --dark-4: #242018; --border: rgba(137,207,240,0.2); --border-dim: rgba(255,255,255,0.07); }
+  html { scroll-behavior: smooth; }
+  body { background: var(--dark); color: var(--white); font-family: 'Barlow', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; height: 70px; background: rgba(10,9,7,0.97); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--border-dim); }
+  .nav-logo { font-family: 'Bebas Neue', cursive; font-size: 1.8rem; letter-spacing: 0.12em; color: var(--accent); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--off-white); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .nav-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dark); background: var(--accent); padding: 0.5rem 1.4rem; text-decoration: none; transition: opacity 0.2s; font-weight: 600; }
+  .nav-cta:hover { opacity: 0.85; }
+  .btn-primary { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--accent); color: var(--dark); padding: 0.9rem 2.2rem; text-decoration: none; display: inline-block; transition: opacity 0.2s; font-weight: 600; }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-ghost { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; border: 0.5px solid rgba(137,207,240,0.5); color: var(--accent); padding: 0.9rem 2.2rem; text-decoration: none; display: inline-block; transition: background 0.2s; }
+  .btn-ghost:hover { background: rgba(137,207,240,0.1); }
+  .section-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+  .section-tag::before { content: ''; width: 30px; height: 0.5px; background: var(--accent); display: block; }
+  .section-title { font-family: 'Bebas Neue', cursive; font-size: clamp(2.5rem, 4vw, 4rem); letter-spacing: 0.04em; line-height: 1; margin-bottom: 1.5rem; }
+  .accent-divider { width: 40px; height: 0.5px; background: var(--accent); margin: 1.5rem 0; }
+
+  /* PAGE HERO */
+  .page-hero { height: 60vh; min-height: 440px; position: relative; display: flex; align-items: flex-end; overflow: hidden; padding-top: 70px; }
+  .page-hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,9,7,0.4) 0%, rgba(10,9,7,0.92) 100%), url('https://images.squarespace-cdn.com/content/v1/66c2f5aa67e20d6721774f6f/1724052906795-09QAA39AOBP6Y1D8N0EY/Screenshot+2024-06-12+at+3.26.36+pm.png') center 30% / cover no-repeat; }
+  .page-hero-content { position: relative; z-index: 2; padding: 0 4rem 4.5rem; }
+  .breadcrumb { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--off-white); margin-bottom: 1rem; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb span { margin: 0 0.5rem; opacity: 0.4; }
+  .page-title { font-family: 'Bebas Neue', cursive; font-size: clamp(3.5rem, 8vw, 7rem); line-height: 0.9; letter-spacing: 0.04em; }
+
+  /* MISSION */
+  #mission { padding: 7rem 4rem; background: var(--dark-2); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .mission-text p { color: var(--off-white); font-size: 1.05rem; line-height: 1.85; margin-bottom: 1.4rem; }
+  .mission-text strong { color: var(--white); font-weight: 600; }
+  .mission-image { aspect-ratio: 4/5; overflow: hidden; position: relative; }
+  .mission-image img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%); }
+  .mission-image::before { content: ''; position: absolute; inset: 0; border: 0.5px solid var(--border); z-index: 1; pointer-events: none; }
+  .mission-image::after { content: ''; position: absolute; bottom: 1.5rem; right: -1.5rem; width: 0.5px; height: 50%; background: var(--accent); }
+
+  /* PHILOSOPHY CALLOUT */
+  .philosophy-callout { padding: 4rem; background: var(--dark); border-left: 2px solid var(--accent); margin: 0; }
+  .philosophy-callout blockquote { font-family: 'Bebas Neue', cursive; font-size: clamp(2rem, 4vw, 3.5rem); color: var(--white); letter-spacing: 0.05em; line-height: 1.1; }
+  .philosophy-callout blockquote span { color: var(--accent); }
+
+  /* PILLARS */
+  #pillars { padding: 7rem 4rem; background: var(--dark-2); }
+  .pillars-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border-dim); margin-top: 3rem; }
+  .pillar { background: var(--dark-3); padding: 2.5rem 2rem; }
+  .pillar-num { font-family: 'Bebas Neue', cursive; font-size: 4.5rem; color: var(--accent); opacity: 0.12; line-height: 1; margin-bottom: 0.5rem; }
+  .pillar-name { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); margin-bottom: 0.8rem; }
+  .pillar-desc { font-size: 0.92rem; color: var(--off-white); line-height: 1.65; }
+
+  /* MEMBERS */
+  #members { padding: 7rem 4rem; background: var(--dark); }
+  .members-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .members-image { aspect-ratio: 4/3; overflow: hidden; }
+  .members-image img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(8%); }
+  .members-text p { color: var(--off-white); font-size: 1.05rem; line-height: 1.85; margin-bottom: 1.2rem; }
+  .members-text strong { color: var(--white); font-weight: 600; }
+  .member-types { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-dim); margin: 1.5rem 0; }
+  .member-type { background: var(--dark-3); padding: 1.2rem 1.5rem; }
+  .mt-title { font-family: 'Bebas Neue', cursive; font-size: 1.4rem; color: var(--white); letter-spacing: 0.04em; }
+  .mt-desc { font-size: 0.82rem; color: var(--off-white); margin-top: 0.2rem; line-height: 1.45; }
+
+  /* FOUNDERS PHOTOS */
+  #founders-photos { padding: 0 0 0; background: var(--dark-2); }
+  .founders-intro { padding: 7rem 4rem 4rem; }
+  .founders-intro p { color: var(--off-white); font-size: 1.05rem; line-height: 1.8; max-width: 700px; margin-top: 1rem; }
+  .founders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .founder-card { position: relative; overflow: hidden; aspect-ratio: 3/4; background: var(--dark-3); }
+  .founder-card img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(20%) contrast(1.05); transition: transform 0.6s ease, filter 0.4s; }
+  .founder-card:hover img { transform: scale(1.04); filter: grayscale(0%); }
+  .founder-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 3.5rem 2.5rem 2.5rem; background: linear-gradient(to top, rgba(10,9,7,0.97) 0%, rgba(10,9,7,0.5) 60%, transparent 100%); }
+  .founder-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+  .founder-name { font-family: 'Bebas Neue', cursive; font-size: 2.6rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 0.3rem; }
+  .founder-origin { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); opacity: 0.8; margin-bottom: 0.8rem; }
+  .founder-bio { font-size: 0.9rem; color: var(--off-white); line-height: 1.6; }
+
+  /* FOUNDER DETAIL */
+  #founder-detail { padding: 7rem 4rem; background: var(--dark-3); }
+  .fd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 4rem; }
+  .fd-card { border-top: 0.5px solid var(--border); padding-top: 2rem; }
+  .fd-name { font-family: 'Bebas Neue', cursive; font-size: 2.2rem; color: var(--white); margin-bottom: 0.3rem; }
+  .fd-role { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
+  .fd-text { font-size: 0.95rem; color: var(--off-white); line-height: 1.75; margin-bottom: 1rem; }
+  .fd-fact { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); border-left: 2px solid var(--accent); padding-left: 0.8rem; margin-top: 1.2rem; opacity: 0.9; }
+
+  /* CTA */
+  #about-cta { padding: 5rem 4rem; background: var(--dark); display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid var(--border-dim); gap: 3rem; }
+  .cta-text h3 { font-family: 'Bebas Neue', cursive; font-size: 2.8rem; letter-spacing: 0.04em; }
+  .cta-text p { color: var(--off-white); margin-top: 0.4rem; font-size: 1rem; }
+  .cta-btns { display: flex; gap: 1rem; flex-shrink: 0; }
+
+  footer { background: var(--dark); border-top: 0.5px solid var(--border-dim); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { font-family: 'Bebas Neue', cursive; font-size: 1.4rem; letter-spacing: 0.12em; color: var(--accent); text-decoration: none; }
+  .footer-copy { font-size: 0.78rem; color: var(--off-white); }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--off-white); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; } .nav-links { display: none; }
+    #mission, .members-layout, .fd-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .founders-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .member-types { grid-template-columns: 1fr; }
+    .page-hero-content, #mission, #pillars, #members, .founders-intro, #founder-detail, #about-cta { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .philosophy-callout { padding: 2.5rem 1.5rem; }
+    #about-cta { flex-direction: column; align-items: flex-start; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">AYCARS</a>
+  <ul class="nav-links">
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="sponsorship.html">Sponsorship</a></li>
+  </ul>
+  <a class="nav-cta" href="membership.html">Join Us</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>About</div>
+    <h1 class="page-title">About<br>AYCARS</h1>
+  </div>
+</div>
+
+<section id="mission">
+  <div class="mission-text">
+    <div class="section-tag">Who We Are</div>
+    <h2 class="section-title">Supercar Club.<br>Networking Org.<br>Media Brand.</h2>
+    <div class="accent-divider"></div>
+    <p>AYCARS is a supercar networking and events company connecting <strong>supercar owners, entrepreneurs, and high-net-worth individuals</strong> through curated automotive experiences and exclusive social environments.</p>
+    <p>We operate across <strong>Dubai and Miami</strong> — hosting events where 40+ exotic cars gather, powerful engines meet powerful minds, and real business relationships are formed.</p>
+    <p>AYCARS sits at the intersection of three things: an exclusive supercar club, a high-value networking organisation, and a media brand with hundreds of millions of views. <strong>Cars are our gateway. Relationships are our product.</strong></p>
+  </div>
+  <div class="mission-image">
+    <img src="https://images.squarespace-cdn.com/content/v1/66c2f5aa67e20d6721774f6f/1724052917277-7N8C8CZFVARA8BUAKQ9V/IMG_5070+2.JPG" alt="AYCARS community">
+  </div>
+</section>
+
+<div class="philosophy-callout">
+  <blockquote>"Cars are a gateway to <span>relationships</span>. Advertising is temporary. <span>Branding lasts.</span>"</blockquote>
+</div>
+
+<section id="pillars">
+  <div class="section-tag">What Drives Us</div>
+  <h2 class="section-title">Our Three Pillars</h2>
+  <div class="pillars-grid">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div class="pillar-name">Supercar Club</div>
+      <p class="pillar-desc">We host events featuring 40+ Lamborghinis, Ferraris, McLarens, Porsches, and Bugattis — cruises, track days, car meets, and showcase events across Dubai and Miami.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div class="pillar-name">Networking Organisation</div>
+      <p class="pillar-desc">We gather the successful entrepreneurs and businesspeople of Dubai and Miami into one community — uniting them with the shared passion of supercars and the shared purpose of building real relationships.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div class="pillar-name">Media Brand</div>
+      <p class="pillar-desc">With 273M+ Instagram views, 127M+ TikTok views, and 318K+ followers, AYCARS creates naturally viral content from every event — turning each drive into a brand moment that reaches millions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="members">
+  <div class="members-layout">
+    <div class="members-image">
+      <img src="https://images.squarespace-cdn.com/content/v1/66c2f5aa67e20d6721774f6f/1724052910927-DRA4TXBLXD9QK7Y2AJ8U/IMG_4195.JPG" alt="AYCARS members" loading="lazy">
+    </div>
+    <div class="members-text">
+      <div class="section-tag">Our Members</div>
+      <h2 class="section-title">Entrepreneurs &amp;<br>Supercar Owners</h2>
+      <div class="accent-divider"></div>
+      <p>AYCARS is <strong>exclusively for supercar owners</strong> — but the people behind the wheel are the real story. Our community gathers the successful businesspeople of Dubai and Miami into one place, united by the passion for exceptional cars.</p>
+      <div class="member-types">
+        <div class="member-type"><div class="mt-title">Entrepreneurs</div><div class="mt-desc">Founders and builders at every stage</div></div>
+        <div class="member-type"><div class="mt-title">CEOs</div><div class="mt-desc">Executive decision-makers across industries</div></div>
+        <div class="member-type"><div class="mt-title">Investors</div><div class="mt-desc">Active dealmakers looking for opportunity</div></div>
+        <div class="member-type"><div class="mt-title">Supercar Owners</div><div class="mt-desc">Lamborghini, Ferrari, McLaren, Porsche, Bugatti</div></div>
+      </div>
+      <p>This is where <strong>deals are done</strong>, partnerships are formed, and lasting connections are built — all through the shared language of supercars.</p>
+      <a class="btn-primary" href="membership.html" style="margin-top:1rem; display:inline-block;">Explore Membership</a>
+    </div>
+  </div>
+</section>
+
+<section id="founders-photos">
+  <div class="founders-intro">
+    <div class="section-tag">The People Behind It</div>
+    <h2 class="section-title">Our Founders</h2>
+    <p>Two internationally-experienced entrepreneurs who saw that supercar clubs were missing something fundamental — real, meaningful connection. They built AYCARS to fix that, starting in Dubai and expanding to Miami.</p>
+  </div>
+  <div class="founders-grid">
+    <div class="founder-card">
+      <img src="https://images.squarespace-cdn.com/content/v1/66c2f5aa67e20d6721774f6f/fd4f4ed2-d2d6-4990-a42d-ee3b6fb3cdd9/WhatsApp+Image+2024-06-26+at+18.38.39.jpg" alt="Aymen Yasin">
+      <div class="founder-overlay">
+        <div class="founder-tag">Co-Founder</div>
+        <div class="founder-name">Aymen Yasin</div>
+        <div class="founder-origin">Pakistan · 8 Countries · Dubai &amp; Miami</div>
+        <p class="founder-bio">Young entrepreneur from Pakistan who has lived across 8 countries, using social media expertise and deep supercar industry connections to revolutionise the supercar club model.</p>
+      </div>
+    </div>
+    <div class="founder-card">
+      <img src="https://images.squarespace-cdn.com/content/v1/66c2f5aa67e20d6721774f6f/44c8b50f-5165-4cb7-8892-9412660c4262/IMG_4886.jpg" alt="Marvin Gramminger">
+      <div class="founder-overlay">
+        <div class="founder-tag">Co-Founder</div>
+        <div class="founder-name">Marvin Gramminger</div>
+        <div class="founder-origin">Germany · Dubai · Global</div>
+        <p class="founder-bio">Originally from Germany, 4 years in Dubai. Applying 10 years of global entrepreneurship experience to build AYCARS into the premier supercar networking club across two continents.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="founder-detail">
+  <div class="section-tag">Founder Profiles</div>
+  <h2 class="section-title">The Vision in Detail</h2>
+  <div class="fd-grid">
+    <div class="fd-card">
+      <div class="fd-name">Aymen Yasin</div>
+      <div class="fd-role">Co-Founder · Dubai &amp; Miami</div>
+      <p class="fd-text">Aymen grew up as a global citizen — a young entrepreneur from Pakistan who has lived across eight countries and absorbed the cultures, business mindsets, and social networks of each. He arrived in the Dubai supercar scene with a different perspective: not just a love for the cars, but a sharp understanding of how social media, community, and shared passion could be turned into something genuinely transformative.</p>
+      <p class="fd-text">He saw that existing clubs were events businesses — not communities. AYCARS was built to be different: a place where being a supercar owner is the starting point, not the finish line.</p>
+      <div class="fd-fact">Lived across 8 countries · Social media &amp; community expert · Dubai &amp; Miami supercar scene</div>
+    </div>
+    <div class="fd-card">
+      <div class="fd-name">Marvin Gramminger</div>
+      <div class="fd-role">Co-Founder · Dubai</div>
+      <p class="fd-text">Originally from Germany, Marvin brings a decade of global entrepreneurship experience to AYCARS. After four years building his life and network in Dubai, he partnered with Aymen to build something neither could have created alone — a club with the operational rigour of a serious business and the genuine community energy of something people actually care about.</p>
+      <p class="fd-text">Marvin's background spans multiple industries and continents. He understands what high-performing people actually need from a network — not small talk at car meets, but real relationships that create real value.</p>
+      <div class="fd-fact">10 years global entrepreneurship · Germany origin · 4 years Dubai · Multi-industry experience</div>
+    </div>
+  </div>
+</section>
+
+<div id="about-cta">
+  <div class="cta-text">
+    <h3>Ready to Be Part of It?</h3>
+    <p>Join as a member or bring your brand to the community.</p>
+  </div>
+  <div class="cta-btns">
+    <a class="btn-primary" href="membership.html">Join as Member</a>
+    <a class="btn-ghost" href="sponsorship.html">Become a Sponsor</a>
+  </div>
+</div>
+
+<footer>
+  <a class="footer-logo" href="index.html">AYCARS</a>
+  <span class="footer-copy">© 2024 AYCARS Club · Dubai, UAE &amp; Miami, USA</span>
+  <ul class="footer-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="sponsorship.html">Sponsorship</a></li>
+  </ul>
+</footer>
+
+<script>
+  const cards = document.querySelectorAll('.pillar,.founder-card,.fd-card,.member-type');
+  const obs = new IntersectionObserver((entries) => { entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>{ e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }, i*100); obs.unobserve(e.target); } }); }, {threshold:0.1});
+  cards.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(24px)'; el.style.transition='opacity 0.65s ease, transform 0.65s ease'; obs.observe(el); });
+</script>
+</body>
+</html>

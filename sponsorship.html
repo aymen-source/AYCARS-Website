@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsorship — AYCARS Club Dubai & Miami</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600&family=Barlow+Condensed:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --accent: #89cff0;
+  --accent-glow: rgba(137,207,240,0.35);
+  --accent-dim: rgba(137,207,240,0.12);
+  --dark: #03050a;
+  --dark-2: #060a12;
+  --dark-3: #0a1020;
+  --dark-4: #101828;
+  --white: #dce8f5;
+  --off-white: #8aacbe;
+  --border: rgba(137,207,240,0.2);
+  --border-bright: rgba(137,207,240,0.5);
+  --border-dim: rgba(137,207,240,0.06);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--dark); color: var(--white);
+  font-family: 'Barlow', sans-serif; font-weight: 300;
+  overflow-x: hidden; line-height: 1.75;
+}
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(rgba(137,207,240,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(137,207,240,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem; height: 60px;
+  background: rgba(3,5,10,0.97);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(137,207,240,0.15);
+  box-shadow: 0 0 30px rgba(137,207,240,0.05);
+}
+.nav-logo img { height: 32px; width: auto; object-fit: contain; mix-blend-mode: screen; display: block; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--off-white); text-decoration: none;
+  transition: color 0.2s ease;
+}
+.nav-links a:hover, .nav-links a.active, .nav-links a:focus-visible { color: var(--accent); outline: none; }
+.nav-cta {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+  font-weight: 600; text-decoration: none;
+  padding: 0.55rem 1.4rem; border-radius: 8px;
+  position: relative; overflow: hidden;
+  color: #03050a;
+  background: linear-gradient(135deg, #b8e8f8 0%, #89cff0 45%, #6ab9e0 100%);
+  box-shadow:
+    0 0 0 1px rgba(137,207,240,0.7),
+    0 0 14px rgba(137,207,240,0.45),
+    0 0 28px rgba(137,207,240,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.35),
+    inset 0 -1px 0 rgba(0,0,0,0.08);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+  display: inline-block;
+}
+.nav-cta::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, transparent 100%);
+  border-radius: 8px 8px 0 0; pointer-events: none;
+}
+.nav-cta::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.55s ease; pointer-events: none;
+}
+.nav-cta:hover, .nav-cta:focus-visible {
+  box-shadow:
+    0 0 0 1px rgba(137,207,240,0.9),
+    0 0 20px rgba(137,207,240,0.65),
+    0 0 45px rgba(137,207,240,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.4),
+    inset 0 -1px 0 rgba(0,0,0,0.08);
+  transform: translateY(-1px); outline: none;
+}
+.nav-cta:hover::after { transform: translateX(120%); }
+.btn-primary {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  background: var(--accent); color: var(--dark);
+  padding: 0.9rem 2.2rem; text-decoration: none; display: inline-block; font-weight: 600;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  box-shadow: 0 0 20px rgba(137,207,240,0.3), 0 0 40px rgba(137,207,240,0.1);
+  transition: box-shadow 0.25s ease, opacity 0.2s ease;
+}
+.btn-primary:hover, .btn-primary:focus-visible {
+  box-shadow: 0 0 30px rgba(137,207,240,0.5), 0 0 60px rgba(137,207,240,0.2);
+  opacity: 0.9; outline: none;
+}
+.btn-ghost {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  border: 1px solid var(--border-bright); color: var(--accent);
+  padding: 0.9rem 2.2rem; text-decoration: none; display: inline-block;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+.btn-ghost:hover, .btn-ghost:focus-visible {
+  background: rgba(137,207,240,0.08);
+  box-shadow: 0 0 20px rgba(137,207,240,0.15), inset 0 0 20px rgba(137,207,240,0.05);
+  outline: none;
+}
+.section-tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.7rem;
+  text-shadow: 0 0 15px rgba(137,207,240,0.5);
+}
+.section-tag::before { content: '>'; font-size: 0.75rem; }
+.section-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2.5rem, 4vw, 4.2rem);
+  letter-spacing: 0.04em; line-height: 1; margin-bottom: 1.5rem;
+  text-shadow: 0 0 30px rgba(137,207,240,0.4), 0 0 60px rgba(137,207,240,0.15);
+}
+.accent-divider {
+  width: 48px; height: 1px;
+  background: var(--accent);
+  margin: 1.5rem 0;
+  box-shadow: 0 0 6px rgba(137,207,240,0.4);
+}
+
+/* PAGE HERO */
+.page-hero {
+  height: 75vh; min-height: 520px;
+  position: relative; display: flex; align-items: flex-end;
+  overflow: hidden; padding-top: 72px;
+}
+.page-hero-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(3,5,10,0.1) 0%, rgba(3,5,10,0.88) 100%),
+    url('brand-assets/Images/Other%20Images/Car%20Gathering.JPG') center 50% / cover no-repeat;
+}
+.page-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+  pointer-events: none; z-index: 1;
+}
+.page-hero-content {
+  position: relative; z-index: 2;
+  padding: 0 4rem 5.5rem; max-width: 900px;
+}
+.breadcrumb {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--off-white); margin-bottom: 1rem;
+}
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.breadcrumb span { margin: 0 0.5rem; opacity: 0.4; }
+.page-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  line-height: 0.9; letter-spacing: 0.04em;
+  text-shadow: 0 0 30px rgba(137,207,240,0.4), 0 0 80px rgba(137,207,240,0.15);
+}
+.page-title .accent-word { color: var(--accent); }
+.page-sub {
+  font-size: 1rem; color: var(--off-white);
+  margin-top: 1.2rem; max-width: 580px; line-height: 1.7;
+}
+
+/* BRANDING STRIP */
+.branding-strip {
+  background: var(--accent); padding: 1.4rem 4rem;
+  position: relative; overflow: hidden;
+}
+.branding-strip::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.branding-strip p {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+  letter-spacing: 0.12em; color: var(--dark);
+  text-align: center; position: relative;
+}
+
+/* INTRO */
+#intro {
+  padding: 7rem 4rem; background: var(--dark-2);
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 6rem; align-items: start;
+  position: relative;
+}
+#intro::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  box-shadow: 0 0 10px rgba(137,207,240,0.3);
+}
+.intro-text p { color: var(--off-white); font-size: 1rem; line-height: 1.85; margin-bottom: 1.4rem; }
+.intro-text strong { color: var(--white); font-weight: 600; }
+.intro-pull {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  color: var(--accent); line-height: 1.1; margin-bottom: 1.5rem;
+  text-shadow: 0 0 25px rgba(137,207,240,0.4);
+}
+.intro-image { aspect-ratio: 3/4; overflow: hidden; position: relative; }
+.intro-image img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: grayscale(10%) contrast(1.05);
+  transition: transform 0.6s ease;
+}
+.intro-image:hover img { transform: scale(1.03); }
+.intro-image::before {
+  content: ''; position: absolute; inset: 0;
+  border: 1px solid var(--border-dim); z-index: 1; pointer-events: none;
+}
+.intro-image::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(137,207,240,0.08) 0%, transparent 60%);
+  mix-blend-mode: screen; pointer-events: none; z-index: 1;
+}
+
+/* EXCLUSIVE CATEGORY */
+#exclusive {
+  padding: 7rem 4rem; background: var(--dark);
+}
+.exclusive-inner {
+  max-width: 900px; margin: 0 auto; text-align: center;
+}
+.exclusive-inner .section-tag { justify-content: center; }
+.exclusive-big {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.95; letter-spacing: 0.04em;
+  margin: 1.5rem 0;
+  text-shadow: 0 0 40px rgba(137,207,240,0.5), 0 0 80px rgba(137,207,240,0.2);
+}
+.exclusive-big span { color: var(--accent); }
+.exclusive-inner p {
+  color: var(--off-white); font-size: 1.05rem;
+  line-height: 1.8; max-width: 640px; margin: 0 auto;
+}
+.exclusive-caveat {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--off-white); opacity: 0.45; margin-top: 1rem;
+}
+
+/* REACH */
+#reach { padding: 7rem 4rem; background: var(--dark-3); position: relative; }
+#reach::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  box-shadow: 0 0 10px rgba(137,207,240,0.3);
+}
+.reach-header {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: end; margin-bottom: 4rem;
+}
+.reach-header p { color: var(--off-white); font-size: 1rem; line-height: 1.8; }
+.reach-header strong { color: var(--white); font-weight: 600; }
+.reach-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 2px; background: var(--border-dim);
+}
+.reach-item {
+  background: var(--dark-4); padding: 2.5rem 2rem; text-align: center;
+  position: relative; overflow: hidden;
+  transition: background 0.3s ease;
+}
+.reach-item:hover { background: rgba(16,24,40,0.95); }
+.reach-item::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  box-shadow: 0 0 8px rgba(137,207,240,0.5);
+}
+.ri-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.8rem; color: var(--accent);
+  letter-spacing: 0.04em; line-height: 1;
+  text-shadow: 0 0 25px rgba(137,207,240,0.5), 0 0 50px rgba(137,207,240,0.2);
+}
+.ri-sub {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--accent); opacity: 0.6; margin-top: 0.15rem;
+}
+.ri-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--off-white); margin-top: 0.5rem;
+}
+.reach-images {
+  display: grid; grid-template-columns: repeat(5,1fr);
+  gap: 3px; margin-top: 3px;
+}
+.reach-images img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+  filter: grayscale(15%) contrast(1.05);
+  transition: filter 0.4s ease, transform 0.5s ease;
+}
+.reach-images img:hover { filter: grayscale(0%); transform: scale(1.03); }
+
+/* SOCIAL */
+#social { padding: 7rem 4rem; background: var(--dark-2); }
+.social-layout {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start; margin-top: 3rem;
+}
+.social-platform {
+  background: var(--dark-3);
+  border: 1px solid var(--border-dim); padding: 2.5rem;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.social-platform:hover {
+  border-color: var(--border);
+  box-shadow: 0 0 20px rgba(137,207,240,0.06), inset 0 0 20px rgba(137,207,240,0.03);
+}
+.social-platform::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 20px; height: 20px;
+  border-top: 1px solid var(--accent); border-left: 1px solid var(--accent);
+}
+.social-platform::after {
+  content: ''; position: absolute; bottom: 0; right: 0;
+  width: 20px; height: 20px;
+  border-bottom: 1px solid var(--accent); border-right: 1px solid var(--accent);
+}
+.sp-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px rgba(137,207,240,0.4);
+}
+.sp-stats {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px; background: var(--border-dim); margin-bottom: 1.5rem;
+}
+.sp-stat { background: var(--dark-4); padding: 1.2rem; text-align: center; }
+.sp-stat-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem; color: var(--accent); line-height: 1;
+  text-shadow: 0 0 15px rgba(137,207,240,0.4);
+}
+.sp-stat-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--off-white); margin-top: 0.2rem;
+}
+.sp-features { list-style: none; }
+.sp-features li {
+  font-size: 0.86rem; color: var(--off-white);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-dim);
+  display: flex; gap: 0.8rem; align-items: flex-start;
+}
+.sp-features li::before {
+  content: '→'; color: var(--accent); flex-shrink: 0;
+  font-size: 0.78rem; margin-top: 0.05rem;
+}
+.whatsapp-platform { grid-column: 1 / -1; }
+.whatsapp-platform .sp-stats { grid-template-columns: 1fr 1fr; }
+
+/* AUDIENCE */
+#audience { padding: 7rem 4rem; background: var(--dark); }
+.audience-layout {
+  display: grid; grid-template-columns: 1fr 1.3fr;
+  gap: 6rem; align-items: start;
+}
+.audience-text p { color: var(--off-white); font-size: 1rem; line-height: 1.85; margin-bottom: 1.2rem; }
+.audience-text strong { color: var(--white); font-weight: 600; }
+.audience-types {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; background: var(--border-dim); margin-top: 1.5rem;
+}
+.at {
+  background: var(--dark-3); padding: 1.8rem 1.5rem;
+  transition: background 0.3s ease;
+}
+.at:hover { background: var(--dark-4); }
+.at-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.6rem; color: var(--white);
+  letter-spacing: 0.04em; line-height: 1; margin-bottom: 0.4rem;
+  text-shadow: 0 0 10px rgba(137,207,240,0.12);
+}
+.at-desc { font-size: 0.8rem; color: var(--off-white); line-height: 1.5; }
+.audience-image { aspect-ratio: 3/4; overflow: hidden; position: relative; }
+.audience-image img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: grayscale(10%) contrast(1.05);
+  transition: transform 0.6s ease;
+}
+.audience-image:hover img { transform: scale(1.03); }
+.audience-image::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(3,5,10,0.5) 0%, transparent 60%);
+  pointer-events: none;
+}
+.dwell-callout {
+  background: rgba(137,207,240,0.06);
+  border: 1px solid var(--border);
+  padding: 1.5rem; margin-top: 1.5rem;
+  box-shadow: 0 0 15px rgba(137,207,240,0.08), inset 0 0 15px rgba(137,207,240,0.04);
+}
+.dwell-callout p { font-size: 0.92rem; color: var(--off-white); line-height: 1.65; }
+.dwell-callout strong { color: var(--accent); font-weight: 600; }
+
+/* SPONSOR BENEFITS */
+#sponsor-benefits { padding: 7rem 4rem; background: var(--dark-2); }
+.sb-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 2px; background: var(--border-dim);
+  margin-top: 3rem;
+}
+.sb-card {
+  background: var(--dark-3); padding: 2.5rem 2rem;
+  position: relative; overflow: hidden;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.sb-card:hover {
+  background: var(--dark-4);
+  box-shadow: 0 0 20px rgba(137,207,240,0.06), inset 0 0 20px rgba(137,207,240,0.03);
+}
+.sb-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  box-shadow: 0 0 6px rgba(137,207,240,0.4);
+}
+.sb-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3rem; color: var(--accent); opacity: 0.3;
+  line-height: 1; margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(137,207,240,0.3);
+}
+.sb-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--white); margin-bottom: 0.8rem;
+}
+.sb-desc { font-size: 0.88rem; color: var(--off-white); line-height: 1.7; }
+
+/* HOW IT WORKS */
+#how { padding: 7rem 4rem; background: var(--dark-3); position: relative; }
+#how::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  box-shadow: 0 0 10px rgba(137,207,240,0.3);
+}
+.steps-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 2px; background: var(--border-dim);
+  margin-top: 3rem;
+}
+.step {
+  background: var(--dark-4); padding: 2.5rem 2rem;
+  position: relative; overflow: hidden;
+  transition: background 0.3s ease;
+}
+.step:hover { background: rgba(16,24,40,0.95); }
+.step-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 5.5rem; color: var(--accent); opacity: 0.07;
+  line-height: 1; position: absolute; top: 0.5rem; right: 1rem;
+  text-shadow: 0 0 20px rgba(137,207,240,0.3);
+}
+.step-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--white); margin-bottom: 0.8rem; position: relative; z-index: 1;
+}
+.step-title::before {
+  content: '';
+  display: block; width: 24px; height: 1px;
+  background: var(--accent);
+  box-shadow: 0 0 6px rgba(137,207,240,0.5);
+  margin-bottom: 0.8rem;
+}
+.step-desc { font-size: 0.86rem; color: var(--off-white); line-height: 1.65; position: relative; z-index: 1; }
+
+/* SPONSOR CTA */
+#sponsor-cta {
+  padding: 8rem 4rem; background: var(--dark-2);
+  position: relative; overflow: hidden;
+}
+#sponsor-cta::before {
+  content: 'SPONSOR';
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'Bebas Neue', cursive; font-size: 18rem;
+  color: rgba(137,207,240,0.025); pointer-events: none;
+  white-space: nowrap;
+  text-shadow: 0 0 60px rgba(137,207,240,0.06);
+}
+.cta-layout {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: start;
+}
+.cta-text h2 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.95; letter-spacing: 0.04em; margin-bottom: 1.2rem;
+  text-shadow: 0 0 30px rgba(137,207,240,0.4), 0 0 60px rgba(137,207,240,0.15);
+}
+.cta-text p { color: var(--off-white); font-size: 1rem; line-height: 1.75; margin-bottom: 1.2rem; }
+.cta-text strong { color: var(--white); font-weight: 600; }
+.cta-form-box {
+  background: var(--dark-3); padding: 3rem 2.5rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 25px rgba(137,207,240,0.06), inset 0 0 25px rgba(137,207,240,0.03);
+  position: relative;
+}
+.cta-form-box::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 20px; height: 20px;
+  border-top: 1px solid var(--accent); border-left: 1px solid var(--accent);
+}
+.cta-form-box::after {
+  content: ''; position: absolute; bottom: 0; right: 0;
+  width: 20px; height: 20px;
+  border-bottom: 1px solid var(--accent); border-right: 1px solid var(--accent);
+}
+.cfb-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px rgba(137,207,240,0.4);
+}
+.cfb-heading {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.4rem; color: var(--white);
+  letter-spacing: 0.04em; margin-bottom: 0.8rem;
+  text-shadow: 0 0 20px rgba(137,207,240,0.2);
+}
+.cfb-sub { font-size: 0.88rem; color: var(--off-white); line-height: 1.65; margin-bottom: 2rem; }
+.send-list { list-style: none; margin-bottom: 2rem; }
+.send-list li {
+  display: flex; gap: 1rem;
+  padding: 0.75rem 0; border-bottom: 1px solid var(--border-dim);
+  font-size: 0.88rem; color: var(--off-white); line-height: 1.5;
+}
+.send-list li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 0.8rem; margin-top: 0.1rem; }
+.send-list li strong { color: var(--white); font-weight: 600; }
+.ab-actions { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem; }
+.contact-row { padding-top: 1.5rem; border-top: 1px solid var(--border-dim); }
+.cr-item {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--off-white); margin-bottom: 0.4rem;
+}
+.cr-item a {
+  color: var(--accent); text-decoration: none;
+  transition: text-shadow 0.2s ease;
+}
+.cr-item a:hover { text-shadow: 0 0 10px rgba(137,207,240,0.5); }
+
+/* FOOTER */
+footer {
+  background: var(--dark); border-top: 1px solid var(--border-dim);
+  padding: 2.5rem 4rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-logo img { height: 32px; display: block; }
+.footer-copy {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem; color: var(--off-white); letter-spacing: 0.08em;
+}
+.footer-links { display: flex; gap: 2rem; list-style: none; }
+.footer-links a {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--off-white); text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-links a:hover { color: var(--accent); }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  nav { padding: 0 1.5rem; } .nav-links { display: none; }
+  #intro, .audience-layout, .cta-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .reach-grid { grid-template-columns: 1fr 1fr; }
+  .social-layout { grid-template-columns: 1fr; }
+  .reach-images { grid-template-columns: 1fr 1fr; }
+  .sb-grid, .steps-grid { grid-template-columns: 1fr; }
+  .audience-types { grid-template-columns: 1fr; }
+  .whatsapp-platform .sp-stats { grid-template-columns: 1fr 1fr; }
+  .branding-strip, #intro, #exclusive, #reach, #social, #audience, #sponsor-benefits, #viral, #how, #sponsor-cta { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .page-hero-content { padding-left: 1.5rem; }
+  .reach-header { grid-template-columns: 1fr; gap: 2rem; }
+  footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
+  #sponsor-cta::before { font-size: 5rem; }
+}
+
+/* VIRAL VIDEOS */
+#viral {
+  padding: 7rem 4rem; background: var(--dark);
+  position: relative;
+}
+#viral::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  box-shadow: 0 0 10px rgba(137,207,240,0.3);
+}
+.viral-header { margin-bottom: 3.5rem; }
+.viral-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3rem, 6vw, 6rem);
+  letter-spacing: 0.04em; line-height: 1;
+  text-shadow: 0 0 40px rgba(137,207,240,0.4), 0 0 80px rgba(137,207,240,0.15);
+}
+.viral-title span { color: var(--accent); }
+.viral-subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--off-white); margin-top: 0.8rem;
+}
+.viral-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+.viral-card {
+  position: relative; overflow: hidden;
+  aspect-ratio: 9/16;
+  background: var(--dark-3);
+  cursor: pointer; display: block; text-decoration: none;
+}
+.viral-card-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(20%) contrast(1.05);
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+.viral-card:hover .viral-card-bg { transform: scale(1.06); filter: grayscale(0%) contrast(1.05); }
+.viral-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(3,5,10,0.95) 0%, rgba(3,5,10,0.3) 50%, rgba(3,5,10,0.1) 100%);
+  transition: background 0.3s ease;
+}
+.viral-card:hover .viral-card-overlay {
+  background: linear-gradient(to top, rgba(3,5,10,0.9) 0%, rgba(3,5,10,0.2) 50%, rgba(3,5,10,0.05) 100%);
+}
+.viral-play {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 46px; height: 46px;
+  border: 1.5px solid rgba(255,255,255,0.7);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 0.85rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+  opacity: 0.85;
+  backdrop-filter: blur(4px);
+  background: rgba(255,255,255,0.08);
+}
+.viral-card:hover .viral-play {
+  opacity: 1;
+  border-color: #89cff0;
+  color: #89cff0;
+  box-shadow: 0 0 25px rgba(137,207,240,0.5), 0 0 50px rgba(137,207,240,0.2);
+  background: rgba(137,207,240,0.08);
+}
+.viral-platform {
+  position: absolute; top: 0.8rem; right: 0.8rem;
+  background: rgba(3,5,10,0.75);
+  border: 1px solid var(--border-dim);
+  padding: 0.3rem 0.5rem;
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center;
+  border-radius: 4px;
+}
+.viral-stats {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 1rem 1rem 1.2rem;
+}
+.viral-views {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.6rem; color: var(--white); line-height: 1;
+  text-shadow: 0 0 20px rgba(137,207,240,0.3);
+}
+.viral-views-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.5rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--off-white); opacity: 0.6;
+}
+.viral-likes {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.58rem; letter-spacing: 0.1em;
+  color: var(--accent); margin-top: 0.3rem; opacity: 0.85;
+}
+@media (max-width: 768px) {
+  .viral-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  #viral { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+
+/* BENTO IMAGE GRID */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 260px 220px;
+  gap: 3px;
+}
+.bento-item { overflow: hidden; position: relative; }
+.bento-item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: grayscale(10%) contrast(1.05);
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+.bento-item:hover img { transform: scale(1.05); filter: grayscale(0%); }
+.bento-item::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(3,5,10,0.5) 0%, transparent 50%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.bento-item:hover::after { opacity: 0.5; }
+.bento-wide { grid-column: 1 / 2; grid-row: 1 / 3; }
+.bento-tall { grid-row: 1 / 2; }
+
+/* SPONSOR PHOTO STRIP */
+.photo-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 3px; margin-top: 3px;
+}
+.photo-strip-item { aspect-ratio: 4/3; overflow: hidden; position: relative; }
+.photo-strip-item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: grayscale(15%) contrast(1.05);
+  transition: transform 0.5s ease, filter 0.4s ease;
+}
+.photo-strip-item:hover img { transform: scale(1.05); filter: grayscale(0%); }
+@media (max-width: 768px) {
+  .bento-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px 200px; }
+  .bento-wide { grid-column: 1 / -1; grid-row: 1; }
+  .photo-strip { grid-template-columns: 1fr 1fr; }
+}
+
+/* INDUSTRY TICKER */
+.industry-ticker-wrap {
+  overflow: hidden; margin-top: 2rem;
+  border-top: 1px solid var(--border-dim);
+  border-bottom: 1px solid var(--border-dim);
+  padding: 0.8rem 0;
+  position: relative;
+}
+.industry-ticker-wrap::before, .industry-ticker-wrap::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2;
+  pointer-events: none;
+}
+.industry-ticker-wrap::before { left: 0; background: linear-gradient(to right, var(--dark), transparent); }
+.industry-ticker-wrap::after { right: 0; background: linear-gradient(to left, var(--dark), transparent); }
+.industry-ticker {
+  display: flex; white-space: nowrap;
+  animation: ticker-scroll 30s linear infinite;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--off-white);
+}
+.industry-ticker span { padding: 0 0.2rem; }
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ROUND IMAGE EDGES */
+.intro-image img, .audience-image img, .bento-item img, .photo-strip-item img, .reach-images img { border-radius: 6px; }
+.bento-item, .photo-strip-item, .intro-image, .audience-image { border-radius: 6px; overflow: hidden; }
+
+/* FOOTER SOCIALS */
+.footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
+.footer-socials { display: flex; gap: 1rem; align-items: center; }
+.footer-social-link { display: flex; align-items: center; opacity: 0.7; transition: opacity 0.2s ease, filter 0.2s ease; }
+.footer-social-link:hover { opacity: 1; filter: drop-shadow(0 0 6px rgba(137,207,240,0.6)); }
+@media (max-width: 768px) { .footer-right { align-items: center; } }
+
+section, div[id] { scroll-margin-top: 64px; }
+
+/* TRUSTED PARTNERS */
+#partners {
+  padding: 7rem 4rem; background: var(--dark-2);
+  position: relative;
+}
+#partners::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  box-shadow: 0 0 10px rgba(137,207,240,0.3);
+}
+.partners-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 2px; background: var(--border-dim); margin-top: 3rem;
+}
+.partner-card {
+  background: var(--dark-3); padding: 2.5rem 2.5rem;
+  position: relative;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.partner-card:hover {
+  background: var(--dark-4);
+  box-shadow: 0 0 20px rgba(137,207,240,0.06), inset 0 0 20px rgba(137,207,240,0.03);
+}
+.partner-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  box-shadow: 0 0 6px rgba(137,207,240,0.4);
+}
+.partner-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem; color: var(--white);
+  letter-spacing: 0.05em; line-height: 1; margin-bottom: 0.6rem;
+  text-shadow: 0 0 20px rgba(137,207,240,0.2);
+}
+.partner-type {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent); opacity: 0.8; margin-bottom: 1rem;
+}
+.partner-desc { font-size: 0.9rem; color: var(--off-white); line-height: 1.7; }
+@media (max-width: 768px) {
+  #partners { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .partners-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="brand-assets/AYCARS-Logo-Editable.png" alt="AYCARS Club"></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="sponsorship.html" class="active">Sponsorship</a></li>
+  </ul>
+  <a class="nav-cta" href="#sponsor-cta">Work With Us</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Sponsorship</div>
+    <h1 class="page-title">Sponsor<br><span class="accent-word">AYCARS</span></h1>
+    <p class="page-sub">Put your brand in front of 40+ CEOs, entrepreneurs, and HNW individuals — at your venue, for 1–3 hours, at every event. 400M+ views of reach behind every single one.</p>
+  </div>
+</div>
+
+<div class="branding-strip">
+  <p>Advertising is temporary &nbsp;&nbsp;·&nbsp;&nbsp; Branding Lasts &nbsp;&nbsp;·&nbsp;&nbsp; Cars Are a Gateway to Relationships</p>
+</div>
+
+<section id="intro">
+  <div class="intro-text">
+    <div class="section-tag">The Opportunity</div>
+    <h2 class="section-title">Not Advertising.<br>Brand Integration.</h2>
+    <div class="accent-divider"></div>
+    <div class="intro-pull">You don't get a logo at our events. You get 40+ HNW individuals in your venue for 1–3 hours.</div>
+    <p>AYCARS events are not media buys. When you sponsor AYCARS, your venue becomes the gathering point for Dubai's and Miami's most successful people. They arrive, they engage, they buy, and they remember who brought them together.</p>
+    <p>The secondary benefit is <strong>400M+ views of organic content</strong> created from every event, distributed across Instagram, TikTok, and WhatsApp. But that's the byproduct. The primary value is standing in the room.</p>
+    <p>And you are the <strong>only brand in your industry</strong> at AYCARS. Exclusive category sponsorship means your competitors can't be here while you are.</p>
+  </div>
+  <div class="intro-image">
+    <img src="brand-assets/Images/Other%20Images/Spirit%20degrained.png" alt="AYCARS sponsor event" loading="lazy">
+  </div>
+</section>
+
+<section id="exclusive">
+  <div class="exclusive-inner">
+    <div class="section-tag">The Differentiator</div>
+    <div class="exclusive-big">You Are the <span>Only</span><br>Brand in Your<br>Industry.</div>
+    <p>AYCARS operates with exclusive category sponsorship. When you partner with us, no other brand in your sector can sponsor AYCARS for the duration of your contract. Your competitors cannot access this audience while you're here.</p>
+    <div class="industry-ticker-wrap">
+      <div class="industry-ticker">
+        <span>Automotive · </span><span>Hospitality · </span><span>Real Estate · </span><span>Financial Services · </span><span>Luxury Watches · </span><span>Aviation · </span><span>Jewellery · </span><span>Fine Dining · </span><span>Private Banking · </span><span>Technology · </span><span>Health &amp; Wellness · </span><span>Fashion · </span><span>Interior Design · </span><span>Travel &amp; Lifestyle · </span><span>Automotive · </span><span>Hospitality · </span><span>Real Estate · </span><span>Financial Services · </span><span>Luxury Watches · </span><span>Aviation · </span><span>Jewellery · </span><span>Fine Dining · </span><span>Private Banking · </span><span>Technology · </span><span>Health &amp; Wellness · </span><span>Fashion · </span><span>Interior Design · </span><span>Travel &amp; Lifestyle · </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reach">
+  <div class="reach-header">
+    <div>
+      <div class="section-tag">The Numbers</div>
+      <h2 class="section-title">400M+<br>Views. Real.</h2>
+    </div>
+    <div>
+      <p>These numbers come from real event content: no paid promotion, no boosted posts. Every view comes from authentic, organic reach generated by 40+ supercars moving through Dubai and Miami.</p>
+      <p><strong>This is what happens when the product is compelling enough to film.</strong></p>
+    </div>
+  </div>
+  <div class="reach-grid">
+    <div class="reach-item">
+      <div class="ri-num">274M</div>
+      <div class="ri-sub">+ 24M Likes</div>
+      <div class="ri-label">Instagram Views</div>
+    </div>
+    <div class="reach-item">
+      <div class="ri-num">130M</div>
+      <div class="ri-sub">+ 23M Likes</div>
+      <div class="ri-label">TikTok Views</div>
+    </div>
+    <div class="reach-item">
+      <div class="ri-num">328K+</div>
+      <div class="ri-sub">All Platforms</div>
+      <div class="ri-label">Total Followers</div>
+    </div>
+    <div class="reach-item">
+      <div class="ri-num">40+</div>
+      <div class="ri-sub">Per Event</div>
+      <div class="ri-label">Supercars</div>
+    </div>
+  </div>
+  <div class="bento-grid">
+    <div class="bento-item bento-wide"><img src="brand-assets/Images/Other%20Images/Bugatti%20Rear.JPG" alt="AYCARS Bugatti" loading="lazy"></div>
+    <div class="bento-item bento-tall"><img src="brand-assets/Images/Other%20Images/812%20Roller.JPG" alt="Ferrari 812 rolling" loading="lazy" style="object-position:center 40%;"></div>
+    <div class="bento-item bento-tall"><img src="brand-assets/Images/Other%20Images/Black%20Series.JPG" alt="Mercedes AMG Black Series" loading="lazy"></div>
+    <div class="bento-item"><img src="brand-assets/Images/Other%20Images/GT3RS%20Roller.JPG" alt="Porsche GT3RS rolling" loading="lazy"></div>
+    <div class="bento-item"><img src="brand-assets/Images/Other%20Images/Rollers.JPG" alt="AYCARS convoy" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="social">
+  <div class="section-tag">Social Media Breakdown</div>
+  <h2 class="section-title">Where Your<br>Brand Lives</h2>
+  <div class="social-layout">
+    <div class="social-platform">
+      <div class="sp-name">Instagram — @aycars.ae</div>
+      <div class="sp-stats">
+        <div class="sp-stat"><div class="sp-stat-num">273M</div><div class="sp-stat-label">Total Views</div></div>
+        <div class="sp-stat"><div class="sp-stat-num">138K</div><div class="sp-stat-label">Followers</div></div>
+        <div class="sp-stat"><div class="sp-stat-num">24M</div><div class="sp-stat-label">Total Likes</div></div>
+      </div>
+      <ul class="sp-features">
+        <li>Reel coverage of every event: drive, meetup, and final activity</li>
+        <li>Sponsor brand visible throughout venue and drive content</li>
+        <li>Stories and posts for real-time event coverage</li>
+        <li>Content co-created with member influencers and creators</li>
+      </ul>
+    </div>
+    <div class="social-platform">
+      <div class="sp-name">TikTok — @aycars.ae</div>
+      <div class="sp-stats">
+        <div class="sp-stat"><div class="sp-stat-num">127M</div><div class="sp-stat-label">Total Views</div></div>
+        <div class="sp-stat"><div class="sp-stat-num">190K</div><div class="sp-stat-label">Followers</div></div>
+        <div class="sp-stat"><div class="sp-stat-num">23M</div><div class="sp-stat-label">Total Likes</div></div>
+      </div>
+      <ul class="sp-features">
+        <li>Short-form viral video from every drive and event</li>
+        <li>Organic distribution: no paid ads, pure engagement</li>
+        <li>Naturally viral format: 40+ supercars = guaranteed views</li>
+        <li>Global audience reach with Dubai and Miami core base</li>
+      </ul>
+    </div>
+    <div class="social-platform whatsapp-platform">
+      <div class="sp-name">WhatsApp Community</div>
+      <div class="sp-stats">
+        <div class="sp-stat"><div class="sp-stat-num">CEOs</div><div class="sp-stat-label">Member Profile</div></div>
+        <div class="sp-stat"><div class="sp-stat-num">Direct</div><div class="sp-stat-label">Communication</div></div>
+      </div>
+      <ul class="sp-features">
+        <li>Private member group with direct access to HNW individuals in Dubai and Miami</li>
+        <li>Event announcements, sponsor highlights, and community updates distributed directly</li>
+        <li>Highest engagement channel with direct message delivery to a qualified audience</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="viral">
+  <div class="viral-header">
+    <div class="section-tag">Social Proof</div>
+    <div class="viral-title">We're Going <span>Viral.</span></div>
+    <p class="viral-subtitle">Real views. Real reach. Every video organic — zero paid promotion.</p>
+  </div>
+  <div class="viral-grid">
+    <a class="viral-card" href="https://www.instagram.com/reel/C5SwV_foe37/?igsh=MWJqb2hxenprdnp4ZA%3D%3D" target="_blank" rel="noopener">
+      <div class="viral-card-bg" style="background-image:url('brand-assets/Social%20Media/24.5M.JPG')"></div>
+      <div class="viral-card-overlay"></div>
+      <div class="viral-play">&#9654;</div>
+      <div class="viral-platform"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#89cff0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="#89cff0" stroke="none"/></svg></div>
+      <div class="viral-stats">
+        <div class="viral-views">24.5M</div>
+        <div class="viral-views-label">Views</div>
+        <div class="viral-likes">&#9825; 1.7M Likes</div>
+      </div>
+    </a>
+    <a class="viral-card" href="https://www.instagram.com/reel/C2hgovdv0eN/?igsh=MWlkazlmendhd2xjcw%3D%3D" target="_blank" rel="noopener">
+      <div class="viral-card-bg" style="background-image:url('brand-assets/Social%20Media/18.5M.JPG')"></div>
+      <div class="viral-card-overlay"></div>
+      <div class="viral-play">&#9654;</div>
+      <div class="viral-platform"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#89cff0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="#89cff0" stroke="none"/></svg></div>
+      <div class="viral-stats">
+        <div class="viral-views">18.5M</div>
+        <div class="viral-views-label">Views</div>
+        <div class="viral-likes">&#9825; 1.2M Likes</div>
+      </div>
+    </a>
+    <a class="viral-card" href="https://www.instagram.com/reel/C-VB4mJImzC/?igsh=MWo3eGY1ZnQwc3Z3Mg%3D%3D" target="_blank" rel="noopener">
+      <div class="viral-card-bg" style="background-image:url('brand-assets/Social%20Media/14.1M.JPG')"></div>
+      <div class="viral-card-overlay"></div>
+      <div class="viral-play">&#9654;</div>
+      <div class="viral-platform"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#89cff0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="#89cff0" stroke="none"/></svg></div>
+      <div class="viral-stats">
+        <div class="viral-views">14.1M</div>
+        <div class="viral-views-label">Views</div>
+        <div class="viral-likes">&#9825; 1.2M Likes</div>
+      </div>
+    </a>
+    <a class="viral-card" href="https://vt.tiktok.com/ZSHxCw4dx/" target="_blank" rel="noopener">
+      <div class="viral-card-bg" style="background-image:url('brand-assets/Social%20Media/13.6M.JPG')"></div>
+      <div class="viral-card-overlay"></div>
+      <div class="viral-play">&#9654;</div>
+      <div class="viral-platform"><svg width="16" height="16" viewBox="0 0 24 24" fill="#89cff0"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/></svg></div>
+      <div class="viral-stats">
+        <div class="viral-views">15.5M</div>
+        <div class="viral-views-label">Views</div>
+        <div class="viral-likes">&#9825; 2.9M Likes</div>
+      </div>
+    </a>
+    <a class="viral-card" href="https://www.tiktok.com/@aycars.ae/video/7339154324485836033" target="_blank" rel="noopener">
+      <div class="viral-card-bg" style="background-image:url('brand-assets/Social%20Media/8.5M.JPG')"></div>
+      <div class="viral-card-overlay"></div>
+      <div class="viral-play">&#9654;</div>
+      <div class="viral-platform"><svg width="16" height="16" viewBox="0 0 24 24" fill="#89cff0"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/></svg></div>
+      <div class="viral-stats">
+        <div class="viral-views">8.5M</div>
+        <div class="viral-views-label">Views</div>
+        <div class="viral-likes">&#9825; 1.5M Likes</div>
+      </div>
+    </a>
+    <a class="viral-card" href="https://www.tiktok.com/@aycars.ae/video/7375490142896688392" target="_blank" rel="noopener">
+      <div class="viral-card-bg" style="background-image:url('brand-assets/Social%20Media/7.7M.JPG')"></div>
+      <div class="viral-card-overlay"></div>
+      <div class="viral-play">&#9654;</div>
+      <div class="viral-platform"><svg width="16" height="16" viewBox="0 0 24 24" fill="#89cff0"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/></svg></div>
+      <div class="viral-stats">
+        <div class="viral-views">7.7M</div>
+        <div class="viral-views-label">Views</div>
+        <div class="viral-likes">&#9825; 1.4M Likes</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="audience">
+  <div class="audience-layout">
+    <div>
+      <div class="section-tag">The Audience</div>
+      <h2 class="section-title">Supercar Owners.<br>Entrepreneurs.<br>Decision Makers.</h2>
+      <div class="accent-divider"></div>
+      <div class="audience-text">
+        <p>The AYCARS audience is not just a demographic. It's a community of <strong>high-performing individuals</strong> who have already self-selected based on ownership of exceptional machines and participation in an exclusive network.</p>
+        <p>These are people who make purchasing decisions, investment decisions, and business decisions. They are actively looking for brands that match their standard.</p>
+      </div>
+      <div class="audience-types">
+        <div class="at">
+          <div class="at-title">CEOs</div>
+          <div class="at-desc">Executive decision-makers across industries in Dubai and Miami</div>
+        </div>
+        <div class="at">
+          <div class="at-title">Entrepreneurs</div>
+          <div class="at-desc">Founders and builders with proven track records and real capital</div>
+        </div>
+        <div class="at">
+          <div class="at-title">Investors</div>
+          <div class="at-desc">Active capital deployers looking for deal flow and connection</div>
+        </div>
+        <div class="at">
+          <div class="at-title">HNW Owners</div>
+          <div class="at-desc">Supercar owners — Lamborghini, Ferrari, McLaren, Bugatti</div>
+        </div>
+      </div>
+      <div class="dwell-callout">
+        <p><strong>40+ of these individuals spend 1–3 hours at your venue</strong> at every event. They are not scrolling past an ad. They are inside your space, engaging with your team, experiencing your brand firsthand.</p>
+      </div>
+    </div>
+    <div class="audience-image">
+      <img src="brand-assets/Images/Other%20Images/Networking.JPG" alt="AYCARS networking" loading="lazy">
+    </div>
+  </div>
+  <div class="photo-strip" style="margin-top:3px;">
+    <div class="photo-strip-item"><img src="brand-assets/Images/Other%20Images/Group.JPEG" alt="AYCARS group" loading="lazy"></div>
+    <div class="photo-strip-item"><img src="brand-assets/Images/Other%20Images/Happy.JPG" alt="AYCARS members" loading="lazy"></div>
+    <div class="photo-strip-item"><img src="brand-assets/Images/Other%20Images/Eating.JPG" alt="AYCARS dinner" loading="lazy"></div>
+    <div class="photo-strip-item"><img src="brand-assets/Images/Other%20Images/Couple.JPG" alt="AYCARS event" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="sponsor-benefits">
+  <div class="section-tag">What You Get</div>
+  <h2 class="section-title" style="white-space:nowrap;">The Full Sponsor Package</h2>
+  <div class="sb-grid">
+    <div class="sb-card">
+      <div class="sb-num">01</div>
+      <div class="sb-name">Direct HNW Access</div>
+      <p class="sb-desc">40+ CEOs, entrepreneurs, investors, and supercar owners inside your venue for 1–3 hours per event. Not a mention. Not a logo. A physical presence in your space.</p>
+    </div>
+    <div class="sb-card">
+      <div class="sb-num">02</div>
+      <div class="sb-name">Exclusive Category</div>
+      <p class="sb-desc">You are the only brand in your industry at AYCARS. Zero direct competition for the attention of the audience during your contract period.</p>
+    </div>
+    <div class="sb-card">
+      <div class="sb-num">03</div>
+      <div class="sb-name">Brand Association</div>
+      <p class="sb-desc">Your brand is permanently associated with 40+ exotic supercars, high-performing people, and the AYCARS lifestyle. The halo effect that lasts beyond the event.</p>
+    </div>
+    <div class="sb-card">
+      <div class="sb-num">04</div>
+      <div class="sb-name">400M+ Reach</div>
+      <p class="sb-desc">Every event generates viral content. Your brand appears in drives featuring Lamborghinis, Ferraris, and McLarens — viewed by 400M+ cumulative viewers across Instagram and TikTok.</p>
+    </div>
+    <div class="sb-card">
+      <div class="sb-num">05</div>
+      <div class="sb-name">Content Creation</div>
+      <p class="sb-desc">Professional photo and video content from every event featuring your brand — assets you receive and own for your own marketing channels and campaigns.</p>
+    </div>
+    <div class="sb-card">
+      <div class="sb-num">06</div>
+      <div class="sb-name">Community Loyalty</div>
+      <p class="sb-desc">AYCARS members trust the brands that support their community. Sponsorship builds the kind of customer loyalty that advertising never can — earned through real experience.</p>
+    </div>
+  </div>
+</section>
+
+<section id="partners">
+  <div class="section-tag">Trusted Partners</div>
+  <h2 class="section-title">Brands That<br>Trust AYCARS</h2>
+  <div class="partners-grid">
+    <div class="partner-card">
+      <div class="partner-name">Gumball 3000</div>
+      <div class="partner-type">World's Largest Car Rally</div>
+      <p class="partner-desc">The world's most famous automotive rally and lifestyle brand — connecting AYCARS members to a global community of supercar enthusiasts, celebrities, and high-performance events across multiple continents.</p>
+    </div>
+    <div class="partner-card">
+      <div class="partner-name">Luxury Supercar Rental</div>
+      <div class="partner-type">Dubai's Premier Car Rental</div>
+      <p class="partner-desc">One of Dubai's largest and most trusted supercar rental companies, Luxury Supercar Rental has hosted AYCARS events at their showroom — providing access to their exclusive fleet and network for our members.</p>
+    </div>
+    <div class="partner-card">
+      <div class="partner-name">ANAX Developments</div>
+      <div class="partner-type">Dubai Real Estate Developer</div>
+      <p class="partner-desc">A leading Dubai real estate developer who have brought their brand directly to AYCARS members — CEOs, investors, and HNW individuals who are exactly the decision-makers behind premium property purchases.</p>
+    </div>
+    <div class="partner-card">
+      <div class="partner-name">Pupil of Fate</div>
+      <div class="partner-type">Dubai's Luxury Car Dealership</div>
+      <p class="partner-desc">Dubai's leading luxury and exotic car dealership, Pupil of Fate hosted an exclusive AYCARS event showcasing their rare and hypercar inventory to a room full of serious supercar enthusiasts and collectors.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="section-tag">The Process</div>
+  <h2 class="section-title">How It Works</h2>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Contact</div>
+      <p class="step-desc">Reach out via email or WhatsApp. Tell us about your brand, your industry, and what you're looking to achieve. We respond personally — always.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Proposal</div>
+      <p class="step-desc">We put together a custom sponsorship proposal tailored to your brand, budget, and objectives. One event, one quarter, or an ongoing partnership.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Event</div>
+      <p class="step-desc">40+ supercars arrive at your venue. 1–3 hours of direct engagement. The drive. The final activity. The content. The reach. The relationships.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Long-Term Value</div>
+      <p class="step-desc">The partnership doesn't end at the event. Members send new customers your way, return themselves, and your brand becomes embedded in the community. We continue filming content, maintaining the relationship, and ensuring your brand stays top-of-mind with Dubai's and Miami's most valuable audience.</p>
+    </div>
+  </div>
+
+</section>
+
+<section id="sponsor-cta">
+  <div class="cta-layout">
+    <div class="cta-text">
+      <div class="section-tag">Get in Touch</div>
+      <h2>Ready to Bring<br>AYCARS to Your Brand?</h2>
+      <p>We work with a limited number of sponsors at any one time to protect the exclusivity of each partnership. If your industry category is available, reach out now.</p>
+      <p>We respond to every enquiry personally and will tell you directly whether your category is available.</p>
+      <p><strong>Sponsorship is about access, and access is limited by design.</strong></p>
+    </div>
+    <div class="cta-form-box">
+      <div class="cfb-title">Sponsorship Enquiry</div>
+      <div class="cfb-heading">Let's Talk</div>
+      <p class="cfb-sub">Send your enquiry with your brand, industry, and what you're looking to achieve. We'll come back to you with availability and a custom proposal.</p>
+      <ul class="send-list">
+        <li><strong>Your brand name</strong> and what you do</li>
+        <li><strong>Your industry category</strong>, so we can confirm exclusivity is available</li>
+        <li><strong>Your objective</strong>: awareness, footfall, content, or a specific event</li>
+        <li><strong>Your location</strong>: Dubai, Miami, or both</li>
+      </ul>
+      <div class="ab-actions">
+        <a class="btn-primary" href="mailto:aymen@aycars.ae?subject=AYCARS Sponsorship Enquiry">Enquire via Email</a>
+        <a class="btn-ghost" href="https://wa.me/971522618992?text=Hi%20Aymen%2C%20I'm%20interested%20in%20sponsoring%20AYCARS" target="_blank">Enquire via WhatsApp</a>
+      </div>
+      <div class="contact-row">
+        <div class="cr-item">Email: <a href="mailto:aymen@aycars.ae">aymen@aycars.ae</a></div>
+        <div class="cr-item">Phone: <a href="tel:+971522618992">+971 52 261 8992</a></div>
+        <div class="cr-item">Instagram: <a href="https://instagram.com/aycars.ae" target="_blank">@aycars.ae</a></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo"><img src="brand-assets/AYCARS-Logo-Editable.png" alt="AYCARS Club"></a>
+  <span class="footer-copy">© 2026 AYCARS Club · Dubai, UAE &amp; Miami, USA</span>
+  <div class="footer-right">
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="sponsorship.html">Sponsorship</a></li>
+    </ul>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/aycars.ae" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#89cff0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="#89cff0" stroke="none"/></svg></a>
+      <a href="https://www.tiktok.com/@aycars.ae" target="_blank" rel="noopener" class="footer-social-link" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="#89cff0"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const animItems = document.querySelectorAll('.reach-item,.sb-card,.step,.at,.social-platform,.intro-text,.intro-image,.audience-image');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }, i * 80);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+animItems.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(22px)';
+  el.style.transition = 'opacity 0.65s ease, transform 0.65s ease';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
