@@ -702,7 +702,6 @@ section, div[id] { scroll-margin-top: 64px; }
   .tiers-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
 }
 @media (max-width: 768px) {
-  .page-hero-content { padding: 0 1.5rem 9rem !important; }
   .apply-text h2 { text-shadow: 0 1px 6px rgba(137,207,240,0.15) !important; }
   .spotlight-card { align-items: center; }
   .spotlight-text { width: 100%; }
@@ -859,6 +858,20 @@ section, div[id] { scroll-margin-top: 64px; }
   .spotlight-img { width: 120px; }
   .central-cee-card { flex-direction: column; padding: 2rem 1.5rem; gap: 1.5rem; }
   .central-cee-card img { width: 100%; }
+}
+@media (max-width: 768px) {
+  .page-hero { align-items: stretch !important; }
+  .page-hero-content {
+    position: absolute !important;
+    inset: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 70px 1.5rem 82px !important;
+    max-width: 100% !important;
+    z-index: 2;
+    box-sizing: border-box;
+  }
+  .page-sub { margin-top: auto; padding-top: 1rem; }
 }
 </style>
 </head>

@@ -794,8 +794,20 @@ section, div[id] { scroll-margin-top: 64px; }
   .section-tag { text-shadow: none; }
 }
 @media (max-width: 768px) {
-  .hero-content { padding: 0 1.5rem 7rem !important; }
   #events-carousel .section-title { font-size: clamp(1.6rem, 7.5vw, 2.4rem); white-space: nowrap; }
+}
+@media (max-width: 768px) {
+  /* Split hero: title top, body text bottom */
+  .hero { align-items: stretch !important; }
+  .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100%;
+    padding: 18px 1.5rem 84px !important;
+    box-sizing: border-box;
+  }
+  .hero-sub { margin-top: auto; padding-top: 1rem; }
+  .hero-actions { flex-shrink: 0; }
 }
 </style>
 </head>

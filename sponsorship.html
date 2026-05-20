@@ -845,7 +845,6 @@ section, div[id] { scroll-margin-top: 64px; }
   .section-title { white-space: normal !important; font-size: clamp(2rem, 7vw, 3.5rem); }
 }
 @media (max-width: 768px) {
-  .page-hero-content { padding: 0 1.5rem 9rem !important; }
   .cta-text h2 { text-shadow: 0 1px 6px rgba(137,207,240,0.15) !important; }
   .viral-play { width: 32px !important; height: 32px !important; }
   .viral-play svg { width: 9px !important; height: 10px !important; }
@@ -896,6 +895,20 @@ section, div[id] { scroll-margin-top: 64px; }
 @media (max-width: 768px) {
   #partners { padding-left: 1.5rem; padding-right: 1.5rem; }
   .partners-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .page-hero { align-items: stretch !important; }
+  .page-hero-content {
+    position: absolute !important;
+    inset: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 70px 1.5rem 82px !important;
+    max-width: 100% !important;
+    z-index: 2;
+    box-sizing: border-box;
+  }
+  .page-sub { margin-top: auto; padding-top: 1rem; }
 }
 </style>
 </head>
